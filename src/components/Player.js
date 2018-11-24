@@ -1,5 +1,6 @@
 
 export class Player{
+
     constructor(name){
         this.name = name
         this.hand = 0
@@ -14,6 +15,8 @@ export class Player{
         this.points += value
     }
 
-
+    resetHand(){
+        this.hand = 0
+    }
 
 }
