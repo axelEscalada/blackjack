@@ -27,8 +27,10 @@ export class Stack {
 
     pop(){
         if(this.node != undefined){
-            this.node = this.node.nextNode;
-            this.size--;
+            let tempNode = this.node
+            this.node = this.node.nextNode
+            this.size--
+            return tempNode
         }
     }
 
