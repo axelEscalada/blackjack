@@ -37,7 +37,6 @@ export class Queue {
     peek(){
         if(this.node)
             return this.node.value;
-        return "empty"
     }
 
     getSize(){

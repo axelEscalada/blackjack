@@ -2,32 +2,39 @@ import { Card } from './Card'
 import { Stack } from './Stack';
 
 export class Deck {
-    
+    suits = ['♠', '♥', '♣', '♦']
+    figures = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q','A']
     constructor(){
         this.deckPoker = this.createCards()    
     }
 
     createCards(){
-        let suits = ['heart', 'spade', 'diamond', 'club']
+        let cards = []
         
-        let cards = new Stack()
-        
-        for(var i = 1; i < 14; i++){
+        for(var i = 0; i < 13; i++){
             let value = i
 
-            if(i < 10){
+            if(i > 8 && i < 12){
                 value = 10
+            }else if(i == 12){
+                value = 11
             }
 
-            cards.push(new Card(suits[0], i, value))
-            cards.push(new Card(suits[1], i, value))
-            cards.push(new Card(suits[2], i, value))
-            cards.push(new Card(suits[3], i, value))
+            cards.push(new Card(this.suits[0], this.figures[i], value))
+            cards.push(new Card(this.suits[1], this.figures[i], value))
+            cards.push(new Card(this.suits[2], this.figures[i], value))
+            cards.push(new Card(this.suits[3], this.figures[i], value))
         }
         
         this.shuffle(cards)
 
-        return cards
+        let stackCards = new Stack()
+
+        cards.forEach(function(element){
+            stackCards.push(element)
+        })
+
+        return stackCards
     }
 
     shuffle (arr) {

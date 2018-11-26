@@ -26,11 +26,12 @@ export class Stack {
     }
 
     pop(){
+        debugger;
         if(this.node != undefined){
             let tempNode = this.node
             this.node = this.node.nextNode
             this.size--
-            return tempNode
+            return tempNode.value
         }
     }
 
