@@ -12,7 +12,7 @@ export class Deck {
         let cards = []
         
         for(var i = 0; i < 13; i++){
-            let value = i
+            let value = i + 2
 
             if(i > 8 && i < 12){
                 value = 10

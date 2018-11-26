@@ -5,7 +5,7 @@ export class Player{
         this.name = name
         this.hand = []
         this.handSum = 0
-        this.points = 0
+        this.points = 2000
     }
 
     addHandSum(value){
@@ -19,6 +19,10 @@ export class Player{
 
     addPoints(value){
         this.points += value
+    }
+
+    substractPoints(value){
+        this.points -= value
     }
 
     resetHand(){
